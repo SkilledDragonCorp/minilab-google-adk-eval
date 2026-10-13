@@ -1,0 +1,41 @@
+{
+  "eval_set_id": "adk_researcher_keyless_v1",
+  "name": "Researcher keyless eval",
+  "description": "Single-turn tool trajectory + reference response for ScriptedLlm.",
+  "eval_cases": [
+    {
+      "eval_id": "motto_lookup",
+      "conversation": [
+        {
+          "invocation_id": "inv-motto-001",
+          "user_content": {
+            "role": "user",
+            "parts": [{ "text": "What is the ADK minilab motto?" }]
+          },
+          "final_response": {
+            "role": "model",
+            "parts": [
+              {
+                "text": "Measure the trajectory, then the answer — ADK eval is the scorecard."
+              }
+            ]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "name": "lookup_local_fact",
+                "args": { "topic": "adk_minilab_motto" }
+              }
+            ],
+            "intermediate_responses": []
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "adk_researcher_lab",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    }
+  ]
+}
