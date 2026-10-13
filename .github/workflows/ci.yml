@@ -36,9 +36,7 @@ jobs:
         run: bash scripts/check-skills-layout.sh
 
       - name: pip-audit
-        run: |
-          uv export --format requirements.txt --no-dev --no-emit-project -o /tmp/requirements.txt
-          uv run pip-audit -r /tmp/requirements.txt
+        run: bash scripts/pip-audit.sh
 
       - name: Install gitleaks
         run: |

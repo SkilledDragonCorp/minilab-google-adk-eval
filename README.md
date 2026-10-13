@@ -64,7 +64,7 @@ Only under `.claude/skills/`:
 uv sync --extra dev
 uv run ruff check src tests && uv run mypy src/adk_lab && uv run pytest -q
 bash scripts/check-skills-layout.sh
-uv export --format requirements.txt --no-dev --no-emit-project -o /tmp/requirements.txt && uv run pip-audit -r /tmp/requirements.txt
+bash scripts/pip-audit.sh
 gitleaks dir --redact --exit-code 1 .
 ```
 
